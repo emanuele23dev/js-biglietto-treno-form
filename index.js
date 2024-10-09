@@ -1,25 +1,22 @@
-function calcolaPrezzo() {
+const buttonEl = document.getElementById("bottone_prezzo");
+
+buttonEl.addEventListener("click", function calcolaPrezzo() {
   const user = document.getElementById("user").value;
-  const user_km = document.getElementById("user_km").value;
-  const user_age = document.getElementById("user_age").value;
+  const user_km = parseInt(document.getElementById("user_km").value);
+  const user_age = parseInt(document.getElementById("user_age").value);
 
+  const ticket = user_km * 0.21;
 
-  let sconto;
-  if (user_age >= 65) {
-    sconto = 0.4;
-  } else if (user_age < 18) {
-    sconto = 0.2;
+  if (user_age < 18) {
+    prezzoTicket = ticket - (ticket * 0.2);
+  } else if (user_age > 65) {
+    prezzoTicket = ticket - (ticket * 0.4);
   } else {
-    sconto = 0;
+    prezzoTicket = ticket;
   }
 
-  const prezzo_ticket = user_km * 0.21;
-  const prezzoScontato = prezzo_ticket * (1 - sconto);
-  const prezzoReale = prezzoScontato.toFixed(2);
+  const prezzoFinale = prezzoTicket.toFixed(2);
 
   const resultEl = document.getElementById("result");
-  resultEl.innerHTML = `${user}, il prezzo del tuo biglietto è di ${prezzoReale} €`;
-}
-
-const buttonEl = document.getElementById("bottone_prezzo");
-buttonEl.addEventListener("click", calcolaPrezzo);
+  resultEl.innerHTML = `Ciao ${user}, percorrendo ${user_km} km, il prezzo del tuo biglietto è di ${prezzoFinale} €`;
+});
