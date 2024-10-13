@@ -20,7 +20,7 @@
     <link rel="icon" href="./img/16457a1f1c63ba10242db10da373fab3_icon.png" />
   </head>
 
-  <body style="background-color: rgb(184, 18, 68)">
+  <body>
     <header>
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="nav navbar-nav">
@@ -35,61 +35,79 @@
       </nav>
     </header>
 
-    <main>
-      <form id="form" class="container">
-        <h1 class="text-white mt-5 text-center">
-          Calcola il prezzo del tuo biglietto
-        </h1>
-        <div class="row mt-5 text-white">
+     <div class="container">
+      
+      <h1 class="text-center mt-5 mb-5">Train Ticket Dom</h1>
 
-            <div class="mb-3 col-4">
-            <label for="user" class="form-label"
-              >Nome Cognome</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="user"
-              placeholder="Inserisci nome e cognome"
-            />
-          </div>
+      <form id="ticket-form" class="card p-4 rounded-3">
+        
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="fullname"
+            id="fullname"
+            aria-describedby="helpId"
+            placeholder="Mario Rossi" required
+          />
+          <small id="helpId" class="form-text text-muted"
+            >Type your name above</small
+          >
+        </div>
 
-          <div class="mb-3 col-4">
-            <label for="user_km" class="form-label"
-              >Km da percorrere</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="user_km"
-              placeholder="Inserisci i km da percorrere"
-            />
-          </div>
+        <div class="mb-3">
+          <label for="km" class="form-label">Km</label>
+          <input
+            type="number"
+            class="form-control"
+            name="km"
+            id="km"
+            aria-describedby="helpId"
+            placeholder="100" required
+          />
+          <small id="helpId" class="form-text text-muted"
+            >Type km of journey</small
+          >
+        </div>
 
-          <div class="mb-3 col-4">
-            <label for="user_age" class="form-label"
-              >Fascia d'età</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="user_age"
-              placeholder="Quanti anni hai?"
-            />
-          </div>
-          <div class="text-center mt-5">
-            <button id="bottone_prezzo" type="button" class="btn btn-outline-light">
-              Calcola prezzo
-            </button>
-          </div>
+        <div class="mb-3">
+          <label for="ageRange" class="form-label">Age Range</label>
+
+          <select name="ageRange" id="ageRange" class="form-control" required>
+            <option value="minor">Minor</option>
+            <option value="adult">Adult</option>
+            <option value="senior">Senior</option>
+          </select>
+          <small id="helpId" class="form-text text-muted"
+            >Select Your age</small
+          >
+        </div>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-dark generate">Generate</button>
+          <button type="submit" class="btn btn-outline-dark reset">Reset</button>
         </div>
       </form>
 
-      <div style="font-size: 30px;" class="result text-white text-center mt-5" id="result"></div>
+      <hr class="mt-5" />
 
-    </main>
-    <footer class="container">
-      <nav class="justify-content-center navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <section style="overflow: auto;" id="ticket">
+        <!-- <div>
+          <h3>USERNAME</h3>
+          <div>OFFERTA</div>
+          <div>CARROZZA</div>
+          <div>CPCODE</div>
+          <div>FINALPRICE</div>
+        </div> -->
+        <!-- 👆 QUESTO SOPRA E' IL MARKUP INSERITO IN JS  -->
+      </section>
+
+    </div>
+
+   
+    <footer class="mt-5">
+      <nav  class="justify-content-center navbar fixed-bottom navbar-dark bg-dark">
         <div class="pt-2 pb-2">
           <a class="nav-item nav-link active" href="#" aria-current="page"
             ><img width="70px" src="./img/Screenshot (994).png" alt="" /><span

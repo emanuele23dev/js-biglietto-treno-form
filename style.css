@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(184, 18, 68);
+}
+
+.ticket-details {
+  width: 100%;
+  div {
+    flex-grow: 1;
+  }
+}
+
+.navbar {
+    width: 100%;
+}
